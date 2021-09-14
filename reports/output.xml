@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.8.10 on linux)" generated="20210914 04:42:55.664" rpa="false">
+<suite id="s1" name="Test Suites" source="/test_suites">
+<suite id="s1-s1" name="Functional" source="/test_suites/functional">
+<suite id="s1-s1-s1" name="Ducks Are Great" source="/test_suites/functional/ducks_are_great">
+<suite id="s1-s1-s1-s1" name="SearchForDucksTests" source="/test_suites/functional/ducks_are_great/SearchForDucksTests.robot">
+<kw name="Set Up Test Suite" library="commons" type="setup">
+<kw name="Set Library Search Order" library="BuiltIn">
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<arguments>
+<arg>SeleniumLibrary</arg>
+<arg>AppiumLibrary</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.054" endtime="20210914 04:42:56.054"></status>
+</kw>
+<kw name="Start Virtual Browser" library="commons">
+<kw name="Start Virtual Display" library="XvfbRobot">
+<doc>Starts virtual display which will be
+ destroyed after test execution will be end</doc>
+<arguments>
+<arg>%{DISPLAY_WIDTH}</arg>
+<arg>%{DISPLAY_HEIGHT}</arg>
+</arguments>
+<msg timestamp="20210914 04:42:56.055" level="INFO">Using virtual display: '1440x1080x24'</msg>
+<status status="PASS" starttime="20210914 04:42:56.055" endtime="20210914 04:42:56.160"></status>
+</kw>
+<kw name="Open Chrome Browser" library="commons">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210914 04:42:56.162" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fc6cac43250&gt;</msg>
+<status status="PASS" starttime="20210914 04:42:56.162" endtime="20210914 04:42:56.162"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.162" endtime="20210914 04:42:56.163"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>enable-automation</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.163" endtime="20210914 04:42:56.163"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.163" endtime="20210914 04:42:56.164"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.164" endtime="20210914 04:42:56.164"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.164" endtime="20210914 04:42:56.164"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--incognito</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.164" endtime="20210914 04:42:56.165"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>download.default_directory=/tmp</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210914 04:42:56.165" level="INFO">${prefs} = {'download.default_directory': '/tmp'}</msg>
+<status status="PASS" starttime="20210914 04:42:56.165" endtime="20210914 04:42:56.165"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:56.165" endtime="20210914 04:42:56.166"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210914 04:42:56.166" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210914 04:42:56.166" endtime="20210914 04:42:58.334"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:42:56.161" endtime="20210914 04:42:58.335"></status>
+</kw>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>%{DISPLAY_WIDTH}</arg>
+<arg>%{DISPLAY_HEIGHT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:42:58.335" endtime="20210914 04:42:58.443"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:42:56.054" endtime="20210914 04:42:58.444"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:42:56.052" endtime="20210914 04:42:58.444"></status>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Are_there_any_ducks_here">
+<kw name="Go To" library="SeleniumLibrary" type="setup">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>${GOOGLE_URL}</arg>
+</arguments>
+<msg timestamp="20210914 04:42:58.445" level="INFO">Opening url 'https://www.google.com/'</msg>
+<status status="PASS" starttime="20210914 04:42:58.445" endtime="20210914 04:43:00.142"></status>
+</kw>
+<kw name="Search For" library="search_page">
+<arguments>
+<arg>Ducks</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${SEARCH_BAR}</arg>
+<arg>%{DELAY_TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:00.142" endtime="20210914 04:43:00.215"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${SEARCH_BAR}</arg>
+<arg>${TEXT}</arg>
+</arguments>
+<msg timestamp="20210914 04:43:00.216" level="INFO">Typing text 'Ducks' into text field 'xpath=//*[@title="Search"]'.</msg>
+<status status="PASS" starttime="20210914 04:43:00.215" endtime="20210914 04:43:00.416"></status>
+</kw>
+<kw name="Wait Until Element Loads Then Click It" library="commons">
+<arguments>
+<arg>${DROPDOWN_SEARCH_BUTTON}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>%{DELAY_TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:00.416" endtime="20210914 04:43:00.924"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<msg timestamp="20210914 04:43:00.926" level="INFO">Clicking element 'xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[2]/div[2]/div[2]/center/input[1]'.</msg>
+<status status="PASS" starttime="20210914 04:43:00.925" endtime="20210914 04:43:04.309"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:00.416" endtime="20210914 04:43:04.309"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:00.142" endtime="20210914 04:43:04.309"></status>
+</kw>
+<kw name="Verify Will Lead To More" library="top_nav_page">
+<arguments>
+<arg>${DUCKS_TEXT}</arg>
+</arguments>
+<kw name="Verify Element Link Contains Text" library="commons">
+<arguments>
+<arg>${IMAGES}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.316" endtime="20210914 04:43:04.357"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${href}</var>
+</assign>
+<msg timestamp="20210914 04:43:04.379" level="INFO">${href} = https://www.google.com/search?q=Ducks&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwi7jbG70_3yAhXSG80KHVGsDyEQ_AUoAXoECAEQAw</msg>
+<status status="PASS" starttime="20210914 04:43:04.357" endtime="20210914 04:43:04.379"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${href}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.379" endtime="20210914 04:43:04.380"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.310" endtime="20210914 04:43:04.380"></status>
+</kw>
+<kw name="Verify Element Link Contains Text" library="commons">
+<arguments>
+<arg>${SHOPPING}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.380" endtime="20210914 04:43:04.418"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${href}</var>
+</assign>
+<msg timestamp="20210914 04:43:04.438" level="INFO">${href} = https://www.google.com/search?q=Ducks&amp;source=lnms&amp;tbm=shop&amp;sa=X&amp;ved=2ahUKEwi7jbG70_3yAhXSG80KHVGsDyEQ_AUoAnoECAEQBA</msg>
+<status status="PASS" starttime="20210914 04:43:04.418" endtime="20210914 04:43:04.438"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${href}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.438" endtime="20210914 04:43:04.438"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.380" endtime="20210914 04:43:04.438"></status>
+</kw>
+<kw name="Verify Element Link Contains Text" library="commons">
+<arguments>
+<arg>${VIDEOS}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.439" endtime="20210914 04:43:04.472"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${href}</var>
+</assign>
+<msg timestamp="20210914 04:43:04.493" level="INFO">${href} = https://www.google.com/search?q=Ducks&amp;source=lnms&amp;tbm=vid&amp;sa=X&amp;ved=2ahUKEwi7jbG70_3yAhXSG80KHVGsDyEQ_AUoA3oECAEQBQ</msg>
+<status status="PASS" starttime="20210914 04:43:04.472" endtime="20210914 04:43:04.494"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${href}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.494" endtime="20210914 04:43:04.494"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.438" endtime="20210914 04:43:04.494"></status>
+</kw>
+<kw name="Verify Element Link Contains Text" library="commons">
+<arguments>
+<arg>${NEWS}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.495" endtime="20210914 04:43:04.536"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns value of ``attribute`` from element ``locator``.</doc>
+<arguments>
+<arg>${ELEMENT}</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${href}</var>
+</assign>
+<msg timestamp="20210914 04:43:04.557" level="INFO">${href} = https://www.google.com/search?q=Ducks&amp;source=lnms&amp;tbm=nws&amp;sa=X&amp;ved=2ahUKEwi7jbG70_3yAhXSG80KHVGsDyEQ_AUoBHoECAEQBg</msg>
+<status status="PASS" starttime="20210914 04:43:04.536" endtime="20210914 04:43:04.557"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${href}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.557" endtime="20210914 04:43:04.558"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.494" endtime="20210914 04:43:04.558"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.309" endtime="20210914 04:43:04.558"></status>
+</kw>
+<kw name="Verify Is About" library="side_bar_page">
+<arguments>
+<arg>${DUCK_TEXT}</arg>
+</arguments>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${TITLE}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.559" endtime="20210914 04:43:04.595"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${DESCRIPTION}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.595" endtime="20210914 04:43:04.644"></status>
+</kw>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<assign>
+<var>${duck}</var>
+</assign>
+<msg timestamp="20210914 04:43:04.644" level="INFO">${duck} = duck</msg>
+<status status="PASS" starttime="20210914 04:43:04.644" endtime="20210914 04:43:04.644"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${SPECIES}</arg>
+<arg>${duck}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.645" endtime="20210914 04:43:04.717"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${COMMON}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.718" endtime="20210914 04:43:04.790"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${SEE_RESULTS_ABOUT}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.791" endtime="20210914 04:43:04.905"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.558" endtime="20210914 04:43:04.905"></status>
+</kw>
+<kw name="Verify Is About" library="results_page">
+<arguments>
+<arg>${DUCK_TEXT}</arg>
+</arguments>
+<kw name="Convert To Lowercase" library="String">
+<doc>Converts string to lowercase.</doc>
+<arguments>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<assign>
+<var>${duck}</var>
+</assign>
+<msg timestamp="20210914 04:43:04.906" level="INFO">${duck} = duck</msg>
+<status status="PASS" starttime="20210914 04:43:04.905" endtime="20210914 04:43:04.906"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${PEOPLE_ALSO_ASK}</arg>
+<arg>${duck}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:04.906" endtime="20210914 04:43:04.998"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${RELATED_VIDEOS}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:05.000" endtime="20210914 04:43:05.179"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${TOP_STORIES}</arg>
+<arg>${PARTIAL_TEXT}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:05.179" endtime="20210914 04:43:05.397"></status>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>${RELATED_SEARCHES}</arg>
+<arg>${duck}</arg>
+</arguments>
+<status status="PASS" starttime="20210914 04:43:05.398" endtime="20210914 04:43:05.495"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:04.905" endtime="20210914 04:43:05.496"></status>
+</kw>
+<doc>Debugging while the test suite is set up</doc>
+<tags>
+<tag>Functional</tag>
+</tags>
+<status status="PASS" starttime="20210914 04:42:58.444" endtime="20210914 04:43:05.496" critical="yes"></status>
+</test>
+<kw name="Tear Down Test Suite" library="commons" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210914 04:43:05.497" endtime="20210914 04:43:05.558"></status>
+</kw>
+<status status="PASS" starttime="20210914 04:43:05.497" endtime="20210914 04:43:05.558"></status>
+</kw>
+<metadata>
+<item name="Environment">dev</item>
+</metadata>
+<status status="PASS" starttime="20210914 04:42:55.704" endtime="20210914 04:43:05.558"></status>
+</suite>
+<status status="PASS" starttime="20210914 04:42:55.701" endtime="20210914 04:43:05.562"></status>
+</suite>
+<status status="PASS" starttime="20210914 04:42:55.699" endtime="20210914 04:43:05.564"></status>
+</suite>
+<status status="PASS" starttime="20210914 04:42:55.666" endtime="20210914 04:43:05.567"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Functional</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Test Suites">Test Suites</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Functional">Test Suites.Functional</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Ducks Are Great">Test Suites.Functional.Ducks Are Great</stat>
+<stat pass="1" fail="0" id="s1-s1-s1-s1" name="SearchForDucksTests">Test Suites.Functional.Ducks Are Great.SearchForDucksTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

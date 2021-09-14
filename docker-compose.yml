@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+    test:
+        network_mode: host
+        build: .
+        shm_size: "2g"
+        environment:
+            ENV: "${ENV}"
+            DUCKS_TEXT: "${DUCKS_TEXT}"
+            DUCK_TEXT: "${DUCK_TEXT}"
+            DELAY_TIMEOUT: 10
+            DISPLAY_WIDTH: 1440
+            DISPLAY_HEIGHT: 1080
+        volumes: [
+           "$PWD/output:/output",
+           "$PWD/test_suites:/test_suites",
+           "$PWD/scripts:/scripts",
+           "$PWD/reports:/reports",
+           "$PWD/resources:/resources",
+           "$PWD/env:/env",
+           "$PWD/dev/shm:/dev/shm"
+        ]
